@@ -1,0 +1,14 @@
+// Well
+.well {
+  margin-bottom: 0;
+  padding: 1rem;
+  background-color: $color-background;
+  border: none;
+  box-shadow: none;
+
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}

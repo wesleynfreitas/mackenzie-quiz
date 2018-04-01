@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "styles/variables";
+@import "styles/base";
+
+/* Components */
+@import "styles/components/navbar";
+@import "styles/components/button";
+@import "styles/components/table";
+@import "styles/components/panel";
+@import "styles/components/primarylabel";
+@import "styles/components/form";
+@import "styles/components/well";
+@import "styles/components/datepicker";
+@import "styles/components/toggle";
+@import "styles/components/combobox";
+@import "styles/components/spinner";
+@import "styles/components/image";

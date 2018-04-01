@@ -1,0 +1,11 @@
+.combobox{
+    padding-left: 0;
+    margin-bottom: 5px;
+
+    select{
+        //-webkit-appearance: none;
+    }
+    select > option {
+        background: #f5f5f5;
+    }
+}

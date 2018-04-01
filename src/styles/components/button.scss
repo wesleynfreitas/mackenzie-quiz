@@ -1,0 +1,97 @@
+// Button
+.btn {
+  padding-right: 30px;
+  padding-left: 30px;
+  //min-width: 175px;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  border-color: $color-primary;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    background-color: darken($color-primary, $color-darken);
+    border-color: darken($color-primary, $color-darken);
+  }
+}
+
+.btn-danger {
+  background-color: $color-danger;
+  border-color: $color-danger;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    background-color: darken($color-danger, $color-darken);
+    border-color: darken($color-danger, $color-darken);
+  }
+}
+
+.btn-addMenu{
+  background:$color-light;
+  border:1px solid #00aff2;
+  border-radius:3px;
+  //width:172px;
+  height:36px;
+  color: #00aff2;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    background-color: $color-light;
+    color: #00aff2;
+  }
+}
+
+.btn-outline{
+  border: 1px solid #00aff2;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #00aff2;
+}
+
+.btn-outline.btn-danger {
+  border: 1px solid #fe2851;
+  border-radius: 3px;
+  background: #ffffff;
+  border-color: #fe2851;
+  color: #fe2851;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    background: #fe2851;
+    color: #ffffff;
+  }
+}
+
+.btn-showPreview{
+  background:$color-light;
+  border:1px solid gray;
+  width:250px;
+  color: gray;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    background-color: $color-light;
+    color: gray;
+  }
+}
+
+.btn-search {
+  margin-top: -20px;
+}

@@ -1,0 +1,77 @@
+// Panel
+.panel {
+  box-shadow: 0 0 4px rgba(0, 0, 0, .15);
+}
+
+.panel-body {
+  .btn-container {
+    margin-top: 20px;
+  }
+}
+
+.panel-body .label {
+  display: inline-block;
+  margin: 5px;
+}
+
+.panel-heading {
+  border-bottom-color: #e5e5e5;
+
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+
+  .btn {
+    float: right;
+  }
+
+  .input-spreadsheet {
+    float: right;
+
+    .loading-gif{
+      width: 2rem;
+      height: 2rem;
+    }
+
+    input{
+    	width: 0.1px;
+    	height: 0.1px;
+    	opacity: 0;
+    	overflow: hidden;
+    	position: absolute;
+    	z-index: -1;
+    }
+
+    .inputfile + label {
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
+      width: 13em;
+      border-radius: 4px;
+      text-align: center;
+      padding: 6px 30px;
+      display: inline-block;
+      cursor: pointer;
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .inputfile:focus + label,
+    .inputfile + label:hover {
+      background-color: darken($color-primary, $color-darken)
+    }
+  }
+}
+
+.panel-title {
+  float: left;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.88;
+}
+
+.label {
+  margin-right: 10px;
+  margin-bottom: 10px !important;
+}

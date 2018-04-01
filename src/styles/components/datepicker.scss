@@ -1,0 +1,46 @@
+// datepicker
+.cms-date-time {
+  display: flex;
+}
+.datetime-picker-outter {
+  position: relative;
+  left: -50%;
+}
+.cms-date-time .form-control:first-child {
+  margin-right: 30px;
+}
+.datepicker,
+.timepicker,
+.table-condensed {
+  z-index: 10;
+  border: 1px solid lightgray;
+  background: white;
+  border-radius: 4px;
+}
+.datepicker {
+  position: absolute;
+  top: 40px;
+}
+.timepicker {
+  position: absolute;
+  top: 40px;
+}
+.timepicker table {
+  margin: 10px;
+}
+.timepicker table .form-group {
+  border: none;
+}
+.timepicker table input{
+  margin-left: 14px;
+}
+.allBlack {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
