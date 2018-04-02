@@ -1,3 +1,5 @@
+'use strict';
+
 import { Component, OnInit } from '@angular/core';
 import { coreQuiz } from './shared/constants';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -9,7 +11,7 @@ import { DialogComponent } from './dialog/dialog.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   questions = coreQuiz;
   formGroup: FormGroup;
@@ -29,12 +31,23 @@ export class AppComponent {
     });
   }
 
+  ngOnInit() {
+    window.addEventListener('load', () => {
+      Array.from(document.getElementsByClassName('tabs__tab')).forEach((item) => {
+        item.className = '';
+      });
+      Array.from(document.getElementsByClassName('tabs__panel')).forEach((item) => {
+        item.className = '';
+      });
+    });
+  }
+
   tabChange(ev: any) {
     const index = ev.tabTitle.split(' ')[1] - 1;
     this.setActiveTab(index);
   }
 
-  checkItem(index: number, item: any) {
+  checkItem(index: number, item: number) {
     this.formGroup.get(index.toString()).setValue(item);
     this.setActiveTab(index + 1);
   }
@@ -43,7 +56,7 @@ export class AppComponent {
     let points = 0;
 
     this.questions.forEach((item, index) => {
-      if ((this.formGroup.get(index.toString()).value + 1) === item.correct) {
+      if ((this.formGroup.get(index.toString()).value) === item.correctIndex) {
         points++;
       }
     });
@@ -55,8 +68,8 @@ export class AppComponent {
     this.openDialog(4);
   }
 
-  private setActiveTab(index) {
-    if (index < 5) {
+  private setActiveTab(index: number) {
+    if (index < this.questions.length) {
       for (let i = 0; i < this.activeTab.length; i++) {
         this.activeTab[i] = false;
       }
@@ -97,7 +110,7 @@ export class AppComponent {
       hasBackdrop: false,
       width: '250px',
       height: '300px',
-      data: {title: title, text: text}
+      data: { title: title, text: text }
     });
   }
 }
