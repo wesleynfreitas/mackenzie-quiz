@@ -9,7 +9,7 @@ import { DialogComponent } from './dialog/dialog.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   questions = coreQuiz;
   formGroup: FormGroup;
@@ -26,6 +26,17 @@ export class AppComponent {
       '2': [null, Validators.required],
       '3': [null, Validators.required],
       '4': [null, Validators.required]
+    });
+  }
+
+  ngOnInit(){
+    window.addEventListener('load', () => {
+      // Array.from(document.getElementsByClassName('tabs__tab')).forEach((item) => {
+      //   item.className = '';
+      // });
+      Array.from(document.getElementsByClassName('tabs__panel')).forEach((item) => {
+        item.className = '';
+      });
     });
   }
 
@@ -93,7 +104,7 @@ export class AppComponent {
       text = 'Poxa, nenhuma? Vamos lá, tenta novamente...';
     }
 
-    this.dialog.open(DialogComponent, {
+    this.dialog.open(DialogComponent,{
       hasBackdrop: false,
       width: '250px',
       height: '300px',

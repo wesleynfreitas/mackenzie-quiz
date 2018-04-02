@@ -1,20 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <div class="main">
-
+  <h1>Quizz - CSS</h1>
   <tabs (currentTabChange)="tabChange($event)">
-    <div *ngFor="let item of questions; let i = index">
-      <tab tabTitle="Questão {{i+1}}" [active]="activeTab[i]">
+    <div class="box1" *ngFor="let item of questions; let i = index">
+      <tab tabTitle="Questão {{i+1}}" [active]="activeTab[i]" >
 
         <div class="row">
           {{ item.title }}
         </div>
-        <div class="row" *ngFor="let question of item.options; let iQuestion = index">
+        <div class="row tab-item" *ngFor="let question of item.options; let iQuestion = index">
           <input type="radio" [checked]="formGroup.get(i.toString()).value == iQuestion" (click)="checkItem(i, iQuestion)">{{ question }}
         </div>
 
         <div class="row" *ngIf="i === 4">
-          <button (click)="resetQuiz()">Resetar</button>
-          <button [disabled]="!formGroup.valid" (click)="finishQuiz()">Finalizar</button>
+          <p>
+            <button (click)="resetQuiz()">Resetar</button>
+            <button [disabled]="!formGroup.valid" (click)="finishQuiz()">Finalizar</button>
+          </p>
         </div>
+
+          <img [src]="item.img" alt="x"/>
+
       </tab>
     </div>
   </tabs>

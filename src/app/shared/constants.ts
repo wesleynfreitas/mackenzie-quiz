@@ -1,54 +1,109 @@
 export const coreQuiz = [
     {
-        title: 'O que é tramitação eletrônica?',
+        title: 'O que significa a sigla CSS?',
         correct: 2,
+      img:"assets/img/css.png",
         options: [
-            'a) Roubo em urnas eletrônicas',
-            'b) Digitalização de documentos importantes',
-            'c) Transferência de dados',
-            'd) Transportes de computadores'
+            'a) Constrution of Style Sites.',
+            'b) Cascading Style Sheets',
+            'c) Consortium of Style Sheets',
+            'd) Constructed Style Sheet'
         ]
     },
     {
-        title: 'O que pode levar à demissão de funcionários públicos com estabilidade?',
+        title: 'Qual a sintaxe genérica de uma regra CSS?',
         correct: 4,
+        img:"assets/img/css2.jpg",
         options: [
-            'a) Se ausentar no horário do expediente sem autorização do chefe imediato',
-            'b) Cometer crimes contra a administração pública',
-            'c) Abandonar o trabalho por mais de 30 dias',
-            'd) Letra B e C estão corretas'
+            'a) propriedade { seletor: valor;}',
+            'b) tag html { propriedade: valor;}',
+            'c) seletor { propriedade: valor;}',
+            'd) tag tag { propriedade: seletor;}'
         ]
     },
     {
-        title: 'O que significa "PSE" na parceria entre os ministérios da saúde e da educação?',
+        title: 'Qual a sintaxe para inserir um comentário CSS?',
         correct: 4,
+        img:"assets/img/css3.jpg",
         options: [
-            'a) Giria das redes sociais',
-            'b) Política de saúde e educação',
-            'c) Programa seguro empreso',
-            'd) Programa saúde na escola'
+            'a) // Este é um comentário',
+            'b) # Este é um comentário',
+            'c) <!-- Este é um comentário -- ',
+            'd)  /* Este é um comentário */'
         ]
     },
     {
-        title: 'O que é poder legislativo?',
+        title: 'Qual regra define parágrafos em negrito?',
         correct: 1,
+        img:"assets/img/css4.png",
         options: [
-            'a) É o poder exercito por senadores e deputados federais',
-            'b) É o poder exercido por magistrados nas diversas instâncias da Justiça',
-            'c) É o poder exercido pelo Presidente da República',
-            'd) É exercido pelo poder de policia'
+            'a) p {font-weight: bold;}',
+            'b) p {text-style: bold;}',
+            'c) bold{p:bold;}',
+            'd) p {font-decoration:bold;}'
         ]
     },
-    {
-        title: 'O que significa "CNS" no departamento de saúde?',
-        correct: 3,
-        options: [
-            'a) Confederação Nacional de Serviços',
-            'b) Cartão nacional de saúde',
-            'c) Conselho Nacional de Saúde',
-            'd) Cadastro Nacional de Estabelecimentos de Saúde'
-        ]
-    }
+     {
+         title: 'Qual a sintaxe da regra CSS para a cor dos parágrafos?',
+         correct: 3,
+        img:"assets/img/css4.png",
+         options: [
+             'a) #FFFFFF { color: p;}',
+             'b) #COLOR [RED]',
+             'c) color { p: #FFFFFF;}',
+             'd) p { color: #FFFFFF;}'
+         ]
+     },
+    // {
+    //   title: 'Que propriedade CSS controla a cor do texto?',
+    //   correct: 1,
+    //   options: [
+    //     'a) color:',
+    //     'b) font#hex:.',
+    //     'c) fonte-colour:',
+    //     'd) font-color:'
+    //   ]
+    // },
+    // {
+    //   title: 'Como definir um fundo vermelho (#FF0000) para o documento?',
+    //   correct: 2,
+    //   options: [
+    //     'a) doc { bgcolor: #FF0000; }',
+    //     'b) body { background-color: #FF0000;}',
+    //     'c) body>color>#FF000000',
+    //     'd) all.body { background-color: #FF0000;}'
+    //   ]
+    // },
+    // {
+    //   title: 'Que propriedade CSS controla o tamanho do texto?',
+    //   correct: 4,
+    //   options: [
+    //     'a) text-height.',
+    //     'b) text-size',
+    //     'c) sizedoc',
+    //     'd) font-size'
+    //   ]
+    // },
+    // {
+    //   title: 'Qual unidade especifica uma medida de comprimento CSS?',
+    //   correct: 1,
+    //   options: [
+    //     'a) pixel',
+    //     'b) doc',
+    //     'c) polegadas',
+    //     'd) mHz'
+    //   ]
+    // },
+    // {
+    //   title: 'Qual propriedade define a família de fontes?',
+    //   correct: 4,
+    //   options: [
+    //     'a) font',
+    //     'b) family-font',
+    //     'c) family-size',
+    //     'd) font-family'
+    //   ]
+    // }
 ];
 
 
