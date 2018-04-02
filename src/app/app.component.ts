@@ -1,9 +1,8 @@
 'use strict';
 
 import { Component, OnInit } from '@angular/core';
-import { coreQuiz } from './shared/constants';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { coreQuiz, coreAlert } from './shared/constants';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
@@ -14,26 +13,29 @@ import { DialogComponent } from './dialog/dialog.component';
 export class AppComponent implements OnInit {
 
   questions = coreQuiz;
+  pointsAlert = coreAlert;
   formGroup: FormGroup;
   activeTab = [true, false, false, false, false];
 
   constructor(
-    private formBuilder: FormBuilder,
-    private dialog: MatDialog
+    private formBuilder: FormBuilder
   ) {
 
-    this.formGroup = this.formBuilder.group({
-      '0': [null, Validators.required],
-      '1': [null, Validators.required],
-      '2': [null, Validators.required],
-      '3': [null, Validators.required],
-      '4': [null, Validators.required]
-    });
+    for (let i = 0; i < this.questions.length; i++) {
+      if (!this.formGroup) {
+        this.formGroup = this.formBuilder.group({
+          '0': [null, Validators.required]
+        });
+        continue;
+      }
+      this.formGroup.addControl(i.toString(), new FormControl(null, Validators.required));
+    }
   }
 
   ngOnInit() {
+
     window.addEventListener('load', () => {
-      Array.from(document.getElementsByClassName('tabs__tab')).forEach((item) => {
+      Array.from(document.getElementsByClassName('tabs__tab-bar')).forEach((item) => {
         item.className = '';
       });
       Array.from(document.getElementsByClassName('tabs__panel')).forEach((item) => {
@@ -43,16 +45,19 @@ export class AppComponent implements OnInit {
   }
 
   tabChange(ev: any) {
+
     const index = ev.tabTitle.split(' ')[1] - 1;
     this.setActiveTab(index);
   }
 
-  checkItem(index: number, item: number) {
-    this.formGroup.get(index.toString()).setValue(item);
+  checkItem(index: number, qIndex: number) {
+
+    this.formGroup.get(index.toString()).setValue(qIndex);
     this.setActiveTab(index + 1);
   }
 
   finishQuiz() {
+
     let points = 0;
 
     this.questions.forEach((item, index) => {
@@ -65,10 +70,11 @@ export class AppComponent implements OnInit {
 
   resetQuiz() {
     this.formGroup.reset();
-    this.openDialog(4);
+    this.setActiveTab(0);
   }
 
   private setActiveTab(index: number) {
+
     if (index < this.questions.length) {
       for (let i = 0; i < this.activeTab.length; i++) {
         this.activeTab[i] = false;
@@ -78,39 +84,9 @@ export class AppComponent implements OnInit {
   }
 
   private openDialog(points: number) {
-    let title = '';
-    let text = '';
 
-    if (points === 5) {
-      title = 'Você conseguiu!';
-      text = 'Parabéns! Você é ótimo nesse tema, acertou todas as questões!';
-    }
-    if (points === 4) {
-      title = 'Por pouco!';
-      text = 'Legal! Você quase acertou todas as questões!';
-    }
-    if (points === 3) {
-      title = 'Mais um pouco..';
-      text = 'Quase... Mais duas e você acertava todas...';
-    }
-    if (points === 2) {
-      title = 'Hmm...';
-      text = 'Você acertou menos da metade... Mas não desista!';
-    }
-    if (points === 1) {
-      title = 'Poxa...';
-      text = 'Alguém precisa estudar mais o tema... Mas não desista!';
-    }
-    if (points === 0) {
-      title = 'Eita...';
-      text = 'Poxa, nenhuma? Vamos lá, tenta novamente...';
-    }
-
-    this.dialog.open(DialogComponent, {
-      hasBackdrop: false,
-      width: '250px',
-      height: '300px',
-      data: { title: title, text: text }
-    });
+    const alert = this.pointsAlert.find(x => x.point === points);
+    document.getElementById('modal-title').innerText = alert.title + ` Você fez ${points} ponto(s)`;
+    document.getElementById('modal-body').innerText = alert.text;
   }
 }

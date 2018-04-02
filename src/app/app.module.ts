@@ -11,7 +11,6 @@ import { HttpClientService } from './shared/http-client.service';
 // Module
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { MatDialogModule } from '@angular/material';
 import { TabModule } from 'angular-tabs-component';
 
 // Component
@@ -34,8 +33,7 @@ enableProdMode();
     ReactiveFormsModule,
     AppRoutingModule,
     SharedModule,
-    MatDialogModule,
-    TabModule
+    TabModule,
   ],
   providers: [
     HttpClientService
