@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
       }
       this.formGroup.addControl(i.toString(), new FormControl(null, Validators.required));
     }
+
+    this.questions.forEach(item => {
+      item.img = `url("${item.img}")`;
+    });
   }
 
   ngOnInit() {
@@ -51,9 +55,10 @@ export class AppComponent implements OnInit {
   }
 
   checkItem(index: number, qIndex: number) {
-
-    this.formGroup.get(index.toString()).setValue(qIndex);
-    this.setActiveTab(index + 1);
+    setTimeout(() => {
+      this.formGroup.get(index.toString()).setValue(qIndex);
+      this.setActiveTab(index + 1);
+    }, 500);
   }
 
   finishQuiz() {

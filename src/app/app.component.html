@@ -6,8 +6,8 @@
     <div *ngFor="let item of questions; let i = index">
       <tab tabTitle="Questão {{i+1}}" [active]="activeTab[i]">
 
-        <div class="row box-image">
-          <img [src]="item.img" />
+        <div class="row box-image" [style.background-image]='item.img'>
+          <!-- <img [src]="item.img" /> -->
         </div>
 
         <div class="row box-title">
@@ -27,6 +27,9 @@
       </tab>
     </div>
   </tabs>
+  <div class='footer'>
+    <p>Desenvolvido por: Gabriel Belloni - Wesley Freitas - Pedro Egydio | Todos os direitos autorais reservados.</p>
+  </div>
 
   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-sm" role="document">

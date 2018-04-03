@@ -1,8 +1,8 @@
 export const coreQuiz = [
     {
         title: 'O que significa a sigla CSS?',
-        correctIndex: 2,
-        img: 'assets/img/css.png',
+        correctIndex: 1,
+        img: './assets/img/css.png',
         options: [
             'a) Constrution of Style Sites.',
             'b) Cascading Style Sheets',
@@ -12,7 +12,7 @@ export const coreQuiz = [
     },
     {
         title: 'Qual a sintaxe genérica de uma regra CSS?',
-        correctIndex: 4,
+        correctIndex: 2,
         img: 'assets/img/css2.jpg',
         options: [
             'a) propriedade { seletor: valor;}',
@@ -23,7 +23,7 @@ export const coreQuiz = [
     },
     {
         title: 'Qual a sintaxe para inserir um comentário CSS?',
-        correctIndex: 4,
+        correctIndex: 3,
         img: 'assets/img/css3.jpg',
         options: [
             'a) // Este é um comentário',
@@ -34,8 +34,8 @@ export const coreQuiz = [
     },
     {
         title: 'Qual regra define parágrafos em negrito?',
-        correctIndex: 1,
-        img: 'assets/img/css4.png',
+        correctIndex: 0,
+        img: 'assets/img/css10.png',
         options: [
             'a) p {font-weight: bold;}',
             'b) p {text-style: bold;}',
@@ -56,7 +56,8 @@ export const coreQuiz = [
     },
     {
         title: 'Que propriedade CSS controla a cor do texto?',
-        correctIndex: 1,
+        correctIndex: 0,
+        img: 'assets/img/css5.png',
         options: [
             'a) color:',
             'b) font#hex:.',
@@ -66,7 +67,8 @@ export const coreQuiz = [
     },
     {
         title: 'Como definir um fundo vermelho (#FF0000) para o documento?',
-        correctIndex: 2,
+        correctIndex: 1,
+        img: 'assets/img/css6.jpg',
         options: [
             'a) doc { bgcolor: #FF0000; }',
             'b) body { background-color: #FF0000;}',
@@ -76,7 +78,8 @@ export const coreQuiz = [
     },
     {
         title: 'Que propriedade CSS controla o tamanho do texto?',
-        correctIndex: 4,
+        correctIndex: 3,
+        img: 'assets/img/css7.jpg',
         options: [
             'a) text-height.',
             'b) text-size',
@@ -86,7 +89,8 @@ export const coreQuiz = [
     },
     {
         title: 'Qual unidade especifica uma medida de comprimento CSS?',
-        correctIndex: 1,
+        correctIndex: 0,
+        img: 'assets/img/css8.jpg',
         options: [
             'a) pixel',
             'b) doc',
@@ -96,7 +100,8 @@ export const coreQuiz = [
     },
     {
         title: 'Qual propriedade define a família de fontes?',
-        correctIndex: 4,
+        correctIndex: 3,
+        img: 'assets/img/css9.gif',
         options: [
             'a) font',
             'b) family-font',
